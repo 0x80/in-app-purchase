@@ -137,7 +137,7 @@ module.exports.validate = function (service, receipt, cb) {
 			apple.validatePurchase(null, receipt, cb);
 			break;
 		case module.exports.GOOGLE:
-			google.validatePurchase(null, receipt, cb);
+			google.validatePurchase(null, typeof receipt === "string" ? JSON.parse(receipt) : receipt, cb);
 			break;
 		case module.exports.WINDOWS:
 			windows.validatePurchase(receipt, cb);
