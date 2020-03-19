@@ -78,10 +78,10 @@ module.exports.getService = function (receipt) {
 		if (receipt.signature) {
 			return module.exports.GOOGLE;
 		}
-		if (receipt.purchaseToken) {
-      return module.exports.GOOGLE;
-		}
-		return module.exports.AMAZON;
+		// if (receipt.purchaseToken) {
+    //   return module.exports.GOOGLE;
+		// }
+		return module.exports.GOOGLE;
 	}
 	if (typeof receipt === 'string') {
 		var characters = receipt.match(/\w/g) || '';
@@ -100,10 +100,10 @@ module.exports.getService = function (receipt) {
 		if (parsed.signature) {
 			return module.exports.GOOGLE;
 		}
-		if (parsed.purchaseToken) {
-      return module.exports.GOOGLE;
-		}
-		return module.exports.AMAZON;
+		// if (parsed.purchaseToken) {
+    //   return module.exports.GOOGLE;
+		// }
+		return module.exports.GOOGLE;
 	} catch (error) {
 		return module.exports.APPLE;
 	}
